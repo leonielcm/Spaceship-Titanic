@@ -1,0 +1,48 @@
+
+#namespace titanic
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: titanic
+  labels:
+    name: titanic
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: titanic-service
+  namespace: titanic
+spec:
+  type: NodePort
+  ports:
+    - nodePort: 32000
+      port: 80
+      targetPort: 80
+  selector:
+    app: titanic-app
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: titanic-app
+  namespace: titanic
+  labels:
+    app: titanic-app
+spec:
+  selector:
+    matchLabels:
+      app: titanic-app
+  template:
+    metadata:
+      labels:
+        app: titanic-app
+    spec:
+      containers:
+      - name: titanic-app
+        image: couchoudma/titanic:latest
+        ports:
+        - containerPort: 80
