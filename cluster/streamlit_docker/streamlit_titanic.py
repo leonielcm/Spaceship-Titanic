@@ -1,4 +1,5 @@
 import json
+import os
 from time import sleep
 import pandas as pd
 import dataikuapi
@@ -18,6 +19,14 @@ def read_ccloud_config(config_file):
                 parameter, value = line.strip().split('=', 1)
                 if parameter not in omitted_fields:
                     conf[parameter] = value.strip()
+
+
+    # On cherche les données d'environnement USERNAME et PASSWORD de l'API
+    sasl_username = os.environ.get('CLOUDKARAFKA_USERNAME')
+    sasl_password = os.environ.get('CLOUDKARAFKA_PASSWORD')
+    # On ajoute ces données au dictionnaire conf
+    conf['sasl.username'] = sasl_username
+    conf['sasl.password'] = sasl_password
     return conf
 
 # PRODUCER

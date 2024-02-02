@@ -1,13 +1,4 @@
 
-#namespace titanic
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: titanic
-  labels:
-    name: titanic
-
----
 
 apiVersion: apps/v1
 kind: Deployment
@@ -28,6 +19,9 @@ spec:
       containers:
       - name: titanic-app
         image: couchoudma/titanic:latest
+        envFrom:
+          - secretRef:
+              name: titanic-api-creds
         ports:
         - containerPort: 80
           protocol: TCP
