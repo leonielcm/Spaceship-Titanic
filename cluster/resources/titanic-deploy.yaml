@@ -9,22 +9,6 @@ metadata:
 
 ---
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: titanic-service
-  namespace: titanic
-spec:
-  type: NodePort
-  ports:
-    - nodePort: 32000
-      port: 80
-      targetPort: 80
-  selector:
-    app: titanic-app
-
----
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -46,3 +30,8 @@ spec:
         image: couchoudma/titanic:latest
         ports:
         - containerPort: 80
+          protocol: TCP
+        
+        
+
+

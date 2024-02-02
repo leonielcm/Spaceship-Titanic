@@ -1,3 +1,4 @@
 pandas
 dataiku-api-client
 streamlit
+confluent-kafka

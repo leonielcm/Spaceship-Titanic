@@ -9,6 +9,8 @@ WORKDIR /app
 # Copy requirements.txt to working directory
 COPY requirements.txt .
 
+COPY client.properties .
+
 # Install dependencies
 RUN pip3 install -r requirements.txt
 
