@@ -1,7 +1,8 @@
 # Projet Big Data
 Par : Léonie LE CAM, Quentin DE GIOVANNI, Matteo COUCHOUD
-
-
+Ecole/Université : CY-TECH, Cergy
+Année universitaire : 2023-2024
+Module : Big Data
 
 ## Cluster Minikube
 
