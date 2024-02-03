@@ -12,6 +12,26 @@ L'intérêt de ce projet est d'ajouter à la prédiction le streaming continu de
 
 ![alt text](documents/Architecture_Projet_BigData_LECAM_DEGIOVANNI_COUCHOUD.jpg)
 
+## Structure de fichiers
+
+```
+spaceship-titanic
+├── cluster
+│   ├── resources
+│   │   ├── titanic-deploy.yaml
+│   │   ├── titanic-nodeport.yaml
+│   │   └── titanic-secrets.yaml
+│   ├── streamlit_docker
+│   │   ├── client.properties
+│   │   ├── Dockerfile
+│   │   ├── requirements.txt
+│   │   └── streamlit_titanic.py
+├── documents
+│   ├── diagramme_architecture_projet
+│   ├── vidéo_de_présentation
+│   └── export_projet_dataiku
+```
+
 ## Mise en place du cluster Minikube
 
 Ce tutoriel assume que les package `kubernetes` et `minikube` ont été installés sur votre machine.
