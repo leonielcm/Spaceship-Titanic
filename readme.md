@@ -4,7 +4,11 @@ Ecole/Université : CY-TECH, Cergy\
 Année universitaire : 2023-2024\
 Module : Big Data
 
-## Cluster Minikube
+## Contexte
+Variante du projet Titanic, Spaceship Titanic demande de prévoir, par des moyens de Machine Learning (ML), si des passagers du vaisseaux arriveront à destination en vie, ou seront "transportés" vers une autre dimension.\
+L'intérêt de ce projet est d'ajouter à la prédiction le streaming continu de données (les informations de passagers) sur lesquelles des prédictions seront faites, grâce à la mise à disposition du modèle de ML par une API en ligne.
+
+## Mise en place du cluster Minikube
 
 Ce tutoriel assume que les package `kubernetes` et `minikube` ont été installés sur votre machine.
 
